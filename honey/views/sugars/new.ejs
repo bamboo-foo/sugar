@@ -5,10 +5,24 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <header>
-      <!-- <a href="/sugars/new">Add a Reading</a> -->
-    </header>
+    <!-- <header>
+      <a href="/sugars/new">Add a Reading</a>
+    </header> -->
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <form action="/sugars" method="POST">
+        <input type="number" name="reading">
+        <select name="units" id="">
+            <option value="mmol/L">mmol/L</option>
+            <option value="mg/dL">mg/dL</option>
+        </select>
+        <select name="readingType" id="">
+            <option value="pre-meal">pre-meal</option>
+            <option value="post-meal">post-meal</option>
+            <option value="fasting">fasting</option>
+        </select>
+        <button type="submit">Add</button>
+        <button>+</button>
+    </form>
   </body>
 </html>
