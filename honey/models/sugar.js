@@ -1,7 +1,6 @@
 const mongoose = require('mongoose'),
       Schema = mongoose.Schema;
 
-module.exports = mongoose.model('Sugar', sugarSchema);
 
 const sugarSchema = new Schema({
     reading: {
@@ -30,3 +29,5 @@ const sugarSchema = new Schema({
     },
     
 })
+
+module.exports = mongoose.model('Sugar', sugarSchema);
