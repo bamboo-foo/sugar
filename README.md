@@ -1,3 +1,5 @@
+! If testing, always use npm start in the root folder(built for cross platform devving).  Nodemon may work initially but problems can occur if changes are made
+
 ☐ App Title: Contains a description of what the app does and optional background info.
 
 ☐ Screenshot(s): A screenshot of your app's landing page and any other screenshots of interest.
