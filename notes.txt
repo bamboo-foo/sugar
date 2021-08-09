@@ -1,0 +1,1 @@
+like view states should be in browser, no?  isn't it quicker and more responsive pure js with map sets so in public it all set up to create and handle like FSM django tool instead of in our db, because what are the db atomic etc.... and why do we need persistance of state except in the event of a crash or something
