@@ -8,16 +8,18 @@ module.exports = {
 
 function newSugar(req, res) {
     // let newRecord = await Sugar.
-    res.render('sugars/new', { 
-        title: 'Add a Sugar Reading',
-    });
+    res.render('sugars/new', 
+        { 
+            title: 'Add a Sugar Reading',
+        }
+    );
 }
 
 async function index(req, res) {
     try{
         let sugars = await Sugar.find({});
         res.render('sugars/index', {
-            title: 'Sugar Records Analysis',
+            title: 'Sugar Records Analysis3',
             sugars,
         });
     } catch(err) {
