@@ -28,7 +28,7 @@ const sugarSchema = new Schema({
             'fasting',
         ]
     },
-    
+    timestamps: true,   
 })
 
 module.exports = mongoose.model('Sugar', sugarSchema);

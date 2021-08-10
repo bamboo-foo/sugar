@@ -8,6 +8,7 @@ module.exports = {
 // else the validator should say please enter in mmol/L or offer up a conversion if reading is out of bounds
 
 async function create(req, res) {
+    
     let valSugarData = validateSugarData(req.body);
      
     try{
@@ -20,6 +21,7 @@ async function create(req, res) {
     } catch(err) {
         console.log('Hi from create in sugarCtrl, there was an error: ', err);
     }
+
 }
 
 function newSugar(req, res) {
