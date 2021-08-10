@@ -9,6 +9,6 @@ const sugarsCtrl = require('../controllers/sugars');
 router.get('/', sugarsCtrl.index);
 router.get('/new', sugarsCtrl.new);
 router.post('/', sugarsCtrl.create);
-
+// TODO: [HON-22] we should create a distinct analysis view which composes the user weights and such by takenAtDate
 
 module.exports = router;
