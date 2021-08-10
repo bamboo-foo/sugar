@@ -15,7 +15,7 @@ async function create(req, res) {
         newRecord.save( function(err) {
             if (err) return res.redirect('/sugars');
             console.log('Hi from create in sugarCtrl, success: ', newRecord);
-            return res.redirect('/sugars', {title: 'Sugar Records Analysis'});
+            return res.redirect('/sugars');
         })
     } catch(err) {
         console.log('Hi from create in sugarCtrl, there was an error: ', err);
@@ -35,7 +35,7 @@ async function index(req, res) {
     try{
         let sugars = await Sugar.find({});
         res.render('sugars/index', {
-            title: 'Sugar Records Analysis3',
+            title: 'Sugar Records Analysis',
             sugars,
         });
     } catch(err) {
