@@ -5,7 +5,28 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+    <header>
+      <a href="/sugars/new">Add a Reading</a>
+    </header>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <table>
+      <thead>
+        <th>Reading</th>
+        <th>Units</th>
+        <th>Reading Type</th>
+      </thead>
+      <tbody>
+        <% sugars.forEach( sugar => { %>
+        <tr>
+          <td><%= sugar.reading %></td>
+          <td><%= sugar.units %></td>
+          <td><%= sugar.readingType %></td>
+        </tr>    
+        <% }); %>
+        
+
+      </tbody>
+    </table>
   </body>
 </html>

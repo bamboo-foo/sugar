@@ -8,6 +8,7 @@ const sugarSchema = new Schema({
         min: 1,
         max: 25, // else the validator should say// else the validator should say please enter in mmol/L or offer up a conversion if reading is out of bounds
         required: true,
+        // TODO: [HON-19] sneed option for date time and validate it into right format
     },
     units: {
         type: String,
