@@ -1,0 +1,26 @@
+/* this is for new page adding records */
+
+section {
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;    
+    border: 1px solid var(--acc-drkr);
+    border-radius: 1em;
+    max-width: 90%;
+}
+
+h3 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+form {
+    border-top: 1px solid var(--acc-drk);
+}
+
+
+/* for responsive just limit the max width to like 85% */
