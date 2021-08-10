@@ -11,16 +11,25 @@
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
     <form action="/sugars" method="POST">
-        <input type="number" name="reading">
+        <label for="">Blood sugar reading value</label>
+        <input type="text" name="reading">
+        <!-- TODO: [HON-20] add a switch at top, and relates with the plus button that if pushed this label should change to were not was -->
+        <label for="">What units was the reading taken with?</label>
         <select name="units" id="">
             <option value="mmol/L">mmol/L</option>
             <option value="mg/dL">mg/dL</option>
         </select>
+        <label for="">Reading with respect to meals</label>
         <select name="readingType" id="">
             <option value="pre-meal">pre-meal</option>
             <option value="post-meal">post-meal</option>
             <option value="fasting">fasting</option>
         </select>
+        <label for="">When was the reading taken?</label>
+        TODO: [HON-21] can we have a button for now? to auto set the datetime to now?
+        <input type="date" name="takenAtDate">
+        <label for="time">Time</label>
+        <input type="time" name="takenAtTime">
         <button type="submit">Add</button>
         <button>+</button>
     </form>
