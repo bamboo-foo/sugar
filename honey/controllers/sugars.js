@@ -9,12 +9,17 @@ module.exports = {
 
 async function create(req, res) {
     let valSugarData = validateSugarData(req.body);
-    
-    console.log(valSugarData);
-    
-    // try{
-    //     let newRecord = await Sugar.create();
-    // }
+     
+    try{
+        const newRecord = await new Sugar(valSugarData);
+        newRecord.save( function(err) {
+            if (err) return res.redirect('/sugars');
+            console.log('Hi from create in sugarCtrl, success: ', newRecord);
+            return res.redirect('/sugars', {title: 'Sugar Records Analysis'});
+        })
+    } catch(err) {
+        console.log('Hi from create in sugarCtrl, there was an error: ', err);
+    }
 }
 
 function newSugar(req, res) {
