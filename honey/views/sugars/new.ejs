@@ -4,6 +4,9 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/main.css' />
     <link rel='stylesheet' href='/stylesheets/new.css' />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet">
   </head>
   <body>
     <!-- <header>
@@ -12,27 +15,43 @@
     <section>
       <h3><%= title %></h3>
       <form action="/sugars" method="POST">
-          <label for="">Blood sugar reading value</label>
-          <input type="text" name="reading">
+          <div class="col" id="reading">
+            <label for="">Blood sugar reading value:</label>
+            <input type="text" name="reading">
+          </div>
           <!-- TODO: [HON-20] add a switch at top, and relates with the plus button that if pushed this label should change to were not was -->
-          <label for="">What units was the reading taken with?</label>
-          <select name="units" id="">
-              <option value="mmol/L">mmol/L</option>
-              <option value="mg/dL">mg/dL</option>
-          </select>
-          <label for="">Reading with respect to meals</label>
-          <select name="readingType" id="">
-              <option value="pre-meal">pre-meal</option>
-              <option value="post-meal">post-meal</option>
-              <option value="fasting">fasting</option>
-          </select>
-          <label for="">When was the reading taken?</label>
-          <!-- TODO: [HON-21] can we have a button for now? to auto set the datetime to now? -->
-          <input type="date" name="takenAtDate">
-          <label for="time">Time</label>
-          <input type="time" name="takenAtTime">
-          <button type="submit">Add</button>
-          <button>+</button>
+          <div class="col" id="units">
+            <label for="">What units was the reading taken with?:</label>
+            <select name="units" id="">
+                <option value="mmol/L">mmol/L</option>
+                <option value="mg/dL">mg/dL</option>
+            </select>
+          </div>
+          <div class="col" id="readingType">
+            <label for="">Reading with respect to meals:</label>
+            <select name="readingType" id="">
+                <option value="pre-meal">pre-meal</option>
+                <option value="post-meal">post-meal</option>
+                <option value="fasting">fasting</option>
+            </select>
+          </div>
+          <div class="col" id="takenAtDate">
+            <label for="">When was the reading taken?</label>
+            <!-- TODO: [HON-21] can we have a button for now? to auto set the datetime to now? -->
+            <input type="date" name="takenAtDate">
+          </div>
+          <div class="col" id="takenAtTime">
+            <label for="time">Time:</label>
+            <input type="time" name="takenAtTime">
+          </div>
+          <div class="col" id="addBtn">
+            <label for="">Submit:</label>
+            <button type="submit">Add</button>
+          </div>
+          <div class="col">
+            <label for="">Add another record:</label>
+            <button id="plus">+</button>
+          </div>
       </form>
     </section>
   </body>

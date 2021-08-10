@@ -6,9 +6,10 @@ section {
     flex-direction: column;
     justify-content: start;
     align-items: center;    
-    border: 1px solid var(--acc-drkr);
+    border: 1px solid var(--acc-bckgrnd);
     border-radius: 1em;
     max-width: 90%;
+    box-shadow: 5px 10px 5px grey;
 }
 
 h3 {
@@ -16,11 +17,54 @@ h3 {
     width: 100%;
     justify-content: center;
     margin-bottom: 1em;
+    font-family: 'Fugaz One', sans-serif;
+    font-size: 1.5em;
 }
 
 form {
-    border-top: 1px solid var(--acc-drk);
+    border-top: 1px solid var(--acc-bckgrnd);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--acc-bckgrnd);
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    align-items: stretch;
+}
+
+/* .col > * {
+    /* display: flex; 
+    margin: 0.5em 0.5em 0.5em 0;
+    padding: 0.5em 0.5em 0.5em 0;
+}  */
+
+
+#plus {
+    border: 3px outset red;
+    border-radius: 1em;
+    background-color: white;
+    color: red;
+    font-weight: 900;    
+}
+
+label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5em;
+    background-color: var(--acc-bckgrnd);
+    margin: 0.5em 0.5em 0.5em 0;
+    padding: 0.5em 0.5em 0.5em 0;
+}
+
+input, select {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
 }
 
 
+
 /* for responsive just limit the max width to like 85% */
+/* also the cols can change back to cols */
