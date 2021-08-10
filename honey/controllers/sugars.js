@@ -49,8 +49,10 @@ async function index(req, res) {
 
 function validateSugarData(inputData) {
     let dataToBeValidated = inputData;
+    // TODO: [HON-25] conversion between units for storage
     
     
+
     dataToBeValidated.reading = parseFloat(inputData.reading);
     if (dataToBeValidated.reading > 25) {
         // TODO: [HON-18] this needs to be fixed, min max needs to be added
