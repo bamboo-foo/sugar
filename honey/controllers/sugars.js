@@ -12,6 +12,7 @@ module.exports = {
 // else the validator should say please enter in mmol/L or offer up a conversion if reading is out of bounds
 
 async function update(req, res) {
+  res.send("hi");
   try {
     console.log(
       "Hi from update in sugarCtrl: your fetch has arrived with: ",
