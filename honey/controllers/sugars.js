@@ -64,7 +64,6 @@ async function create(req, res) {
 }
 
 function newSugar(req, res) {
-  // let newRecord = await Sugar.
   res.render("sugars/new", {
     title: "Add a Sugar Reading",
   });

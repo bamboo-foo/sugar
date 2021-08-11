@@ -3,15 +3,15 @@
 <p>Welcome to <%= title %></p>
 <form action="" method="POST">
   <label for="">Blood sugar reading value</label>
-  <input type="text" name="reading" value="<%= sugar.reading %>" />
+  <input type="text" name="reading" value="<%= sugar.reading %>" id="reading" />
   <!-- TODO: [HON-20] add a switch at top, and relates with the plus button that if pushed this label should change to were not was -->
   <label for="">What units was the reading taken with?</label>
-  <select name="units" id="" value="<%= sugar.units %>">
+  <select name="units" id="units" value="<%= sugar.units %>">
     <option value="mmol/L">mmol/L</option>
     <option value="mg/dL">mg/dL</option>
   </select>
   <label for="">Reading with respect to meals</label>
-  <select name="readingType" id="" value="<%= sugar.readingType %>">
+  <select name="readingType" id="readingType" value="<%= sugar.readingType %>">
     <option value="pre-meal">pre-meal</option>
     <option value="post-meal">post-meal</option>
     <option value="fasting">fasting</option>
@@ -21,11 +21,16 @@
   <input
     type="date"
     name="takenAtDate"
-    id="date"
+    id="takenAtDate"
     value="<%= sugar.takenAtDate %>"
   />
   <label for="time">Time</label>
-  <input type="time" name="takenAtTime" value="<%= sugar.takenAtTime %>" />
+  <input
+    type="time"
+    name="takenAtTime"
+    id="takenAtTime"
+    value="<%= sugar.takenAtTime %>"
+  />
   <div id="submit">Submit</div>
   <!-- <button type="submit">Submit</button> -->
   <button>+</button>
