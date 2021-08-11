@@ -40,6 +40,11 @@ async function updateSugar(mouseEvent) {
   } catch (err) {
     console.log(err);
   }
-  informUser = response ? 
-  console.log('Record Updated')// this could be like updating the title and giving a settimeoutbefore the redirect on the server side
+
+  //TODO: [HON-36]  this could be like updating the title and giving a settimeoutbefore the redirect on the server side
+  informUser = response ? response : "error";
+  console.log(informUser);
+  informUser !== "error"
+    ? (window.location = "/sugars")
+    : console.log("please try again");
 }

@@ -12,12 +12,19 @@ module.exports = {
 // else the validator should say please enter in mmol/L or offer up a conversion if reading is out of bounds
 
 async function update(req, res) {
-  res.send("hi");
+  // res.send("updated");
   try {
-    console.log(
-      "Hi from update in sugarCtrl: your fetch has arrived with: ",
-      req.body
-    );
+    let foundRecord = await Sugar.findById(req.params.id);
+
+    for (let key in req.body) {
+      foundRecord[key] = req.body[key];
+    }
+    foundRecord.save(function (err) {
+      if (err) return res.redirect("/sugars");
+      console.log("Hi from update in sugarCtrl, success: ", foundRecord);
+
+      res.send("200");
+    });
   } catch (err) {
     console.log("Hi from edit in sugarCtrl: ", err);
   }
