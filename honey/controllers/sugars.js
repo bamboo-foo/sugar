@@ -58,6 +58,11 @@ function validateSugarData(inputData) {
   let dataToBeValidated = inputData;
   // TODO: [HON-25] conversion between units for storage
 
+  dataToBeValidated.takenAtDate =
+    dataToBeValidated.takenAtDate === ""
+      ? todaysDate()
+      : dataToBeValidated.takenAtDate;
+
   dataToBeValidated.reading = parseFloat(inputData.reading);
   if (dataToBeValidated.reading > 25) {
     // TODO: [HON-18] this needs to be fixed, min max needs to be added
@@ -69,4 +74,26 @@ function validateSugarData(inputData) {
 
     return validatedData;
   }
+}
+
+function todaysDate() {
+  const dateEntered = new Date(),
+    year = dateEntered.getFullYear().toString(),
+    month = (dateEntered.getMonth() + 1).toString(),
+    date = dateEntered.getDate();
+
+  function unshiftZero(input) {
+    if (input < 10) {
+      let dateStr = input.toString();
+
+      return "0" + dateStr;
+    } else {
+      return input.toString();
+    }
+  }
+
+  let monthStr = unshiftZero(month),
+    dateStr = unshiftZero(date);
+
+  return year + "-" + monthStr + "-" + dateStr;
 }
