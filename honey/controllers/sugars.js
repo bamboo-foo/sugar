@@ -6,14 +6,31 @@ module.exports = {
   new: newSugar,
   create,
   show,
+  edit,
 };
 // else the validator should say please enter in mmol/L or offer up a conversion if reading is out of bounds
+
+async function edit(req, res) {
+  try {
+    let sugar = await Sugar.findById(req.params.id);
+
+    res.render("sugars/edit", {
+      title: "Edit Record",
+      sugar,
+    });
+  } catch (err) {
+    console.log("Hi from edit in sugarCtrl, we have an error: ", err);
+  }
+}
 
 async function show(req, res) {
   try {
     let sugar = await Sugar.findById(req.params.id);
 
-    res.render("sugars/show", { sugar });
+    res.render("sugars/show", {
+      title: "Detailed Sugar Record",
+      sugar,
+    });
   } catch (err) {
     console.log("Hi from show in sugarCtrl, we have an error: ", err);
   }
