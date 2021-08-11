@@ -7,8 +7,20 @@ module.exports = {
   create,
   show,
   edit,
+  update,
 };
 // else the validator should say please enter in mmol/L or offer up a conversion if reading is out of bounds
+
+async function update(req, res) {
+  try {
+    console.log(
+      "Hi from update in sugarCtrl: your fetch has arrived with: ",
+      req.body
+    );
+  } catch (err) {
+    console.log("Hi from edit in sugarCtrl: ", err);
+  }
+}
 
 async function edit(req, res) {
   try {

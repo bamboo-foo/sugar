@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 <h1><%= title %></h1>
 <p>Welcome to <%= title %></p>
-<form action="/sugars" method="POST">
+<form action="" method="POST">
   <label for="">Blood sugar reading value</label>
   <input type="text" name="reading" value="<%= sugar.reading %>" />
   <!-- TODO: [HON-20] add a switch at top, and relates with the plus button that if pushed this label should change to were not was -->
@@ -26,10 +26,11 @@
   />
   <label for="time">Time</label>
   <input type="time" name="takenAtTime" value="<%= sugar.takenAtTime %>" />
-  <button>Submit</button>
+  <div id="submit">Submit</div>
   <!-- <button type="submit">Submit</button> -->
   <button>+</button>
 </form>
 <script src="/javascripts/today-date.js"></script>
 <script src="/javascripts/edit-preselect.js"></script>
+<script src="/javascripts/submit.js"></script>
 <%- include('../partials/footer') %>
