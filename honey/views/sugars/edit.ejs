@@ -2,9 +2,9 @@
 <link rel="stylesheet" href="/stylesheets/main.css" />
 <link rel="stylesheet" href="/stylesheets/new.css" />
 
-<section>
+<main>
   <h3><%= title %></h3>
-  <form action="" method="POST">
+  <form action="" method="POST" class="form">
     <div class="col">
       <label for="">Blood sugar reading value:</label>
       <input
@@ -53,11 +53,15 @@
         value="<%= sugar.takenAtTime %>"
       />
     </div>
-    <div class="col" id="submit">Submit</div>
+
     <!-- <button type="submit">Submit</button> -->
     <!-- <button>+</button> -->
   </form>
-</section>
+  <div class="col">
+    <div></div>
+    <div id="submit">Submit</div>
+  </div>
+</main>
 <script src="/javascripts/today-date.js"></script>
 <script src="/javascripts/edit-preselect.js"></script>
 <script src="/javascripts/submit.js"></script>
