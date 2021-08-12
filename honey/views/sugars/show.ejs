@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+<table>
+  <thead>
+    <th>ID</th>
+    <th>Reading</th>
+    <th>Units</th>
+    <th>Reading Type</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= sugar._id %></td>
+      <td><%= sugar.reading %></td>
+      <td><%= sugar.units %></td>
+      <td><%= sugar.readingType %></td>
+      <td><a href="/sugars/<%= sugar._id %>/edit">Edit Reading</a></td>
+    </tr>
+  </tbody>
+</table>
+<%- include('../partials/footer') %>

@@ -23,30 +23,10 @@ const sugarSchema = new Schema(
     },
     takenAtDate: {
       type: Date,
-      default: "2020-08-10",
-      //  function datin() {
-      //     const dateEntered = new Date,
-      //           year = dateEntered.getFullYear().toString(),
-      //           month = (dateEntered.getMonth() + 1).toString(),
-      //           date = dateEntered.getDate();
-
-      //     function unshiftZero(input) {
-
-      //         if (input < 10) {
-      //             let dateStr = input.toString();
-
-      //             return '0' + dateStr;
-      //         } else {
-      //             return input.toString();
-      //         }
-
-      //     }
-
-      //     let monthStr = unshiftZero(month),
-      //         dateStr = unshiftZero(date);
-
-      //     return year + '-' + monthStr + '-' + dateStr;
-      // }
+    },
+    takenAtTime: {
+      // army time
+      type: String,
     },
   },
   {

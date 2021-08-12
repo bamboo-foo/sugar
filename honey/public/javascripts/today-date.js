@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", insertDate);
 
-const dateField = document.getElementById("date");
+const dateField = document.getElementById("takenAtDate");
 
 function insertDate() {
   // controller will validate even if client has js blocked

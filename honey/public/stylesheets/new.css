@@ -10,6 +10,7 @@ section {
   border-radius: var(--corners-md);
   max-width: 90%;
   box-shadow: 5px 10px 5px grey;
+  padding-bottom: 1em;
 }
 
 h3 {
