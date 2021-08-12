@@ -44,10 +44,10 @@ nav {
   display: flex;
   font-family: "Roboto Slab", sans-serif;
   justify-content: space-around;
-  font-size: 0.75em;
+  width: 65%;
+  justify-self: center;
+  font-size: 0.9em;
   padding: 1em 0;
-  border-bottom: 1px solid var(--acc-bckgrnd);
-  box-shadow: 0 7px 5px grey;
 }
 
 a {
@@ -61,4 +61,13 @@ a:hover {
 
 td > a {
   color: var(--acc-drkr);
+}
+
+header .container {
+  display: flex;
+  justify-self: center;
+  justify-content: space-around;
+  border-bottom: 1px solid var(--acc-bckgrnd);
+  box-shadow: 0 7px 5px grey;
+  background-color: var(--acc-drkr);
 }
