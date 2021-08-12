@@ -36,7 +36,7 @@ nav {
   color: var(--bckgrnd-clr-lt);
   justify-content: center;
   font-family: "Fugaz One", sans-serif;
-  font-size: 4.4em;
+  font-size: 3em;
   margin: 0;
 }
 
@@ -44,7 +44,7 @@ nav {
   display: flex;
   font-family: "Roboto Slab", sans-serif;
   justify-content: space-around;
-  font-size: 1.5em;
+  font-size: 0.75em;
   padding: 1em 0;
   border-bottom: 1px solid var(--acc-bckgrnd);
   box-shadow: 0 7px 5px grey;
