@@ -82,5 +82,24 @@ select {
   border-radius: var(--corners-sm);
 }
 
+#submit {
+  background-color: var(--acc-bckgrnd);
+  display: flex;
+  justify-content: center;
+  color: var(--bckgrnd-clr-lt);
+  border-radius: var(--corners-sm);
+  padding: 1em;
+  font-size: var(--text-md);
+  justify-content: center;
+  flex-direction: row;
+  font-family: "Roboto Slab", sans-serif;
+  border: 3px dashed var(--bckgrnd-clr);
+}
+
+#submit:hover {
+  background-color: var(--acc-drk);
+  border: 3px solid var(--bckgrnd-clr);
+}
+
 /* for responsive just limit the max width to like 85% */
 /* also the cols can change back to cols */
