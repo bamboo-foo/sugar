@@ -31,7 +31,8 @@ form {
   width: 100%;
 }
 
-.form {
+.form,
+.login-form {
   border-top: 1px solid var(--acc-bckgrnd);
   display: flex;
   flex-direction: column;
@@ -90,13 +91,14 @@ select {
   border-radius: var(--corners-sm);
 }
 
-#submit {
+.submit {
   background-color: var(--bckgrnd-clr-lt);
   display: flex;
   justify-content: center;
   color: var(--acc-drkr);
   border-radius: var(--corners-sm);
   padding: 1em;
+  width: auto;
   font-size: var(--text-md);
   justify-content: center;
   flex-direction: row;
@@ -104,11 +106,15 @@ select {
   border: 3px solid var(--acc-bckgrnd);
 }
 
-#submit:hover {
+.submit:hover {
   background-color: var(--acc-bckgrnd);
   border: 3px solid var(--bckgrnd-clr);
 }
 
+#newSub {
+  flex-direction: row;
+  justify-content: space-around;
+}
 /* for responsive just limit the max width to like 85% */
 /* also the cols can change back to cols */
 
