@@ -103,3 +103,20 @@ select {
 
 /* for responsive just limit the max width to like 85% */
 /* also the cols can change back to cols */
+
+@media only screen and (min-width: 768px) {
+  form {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .col {
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (min-width: 1135px) {
+  form {
+    flex-wrap: nowrap;
+  }
+}
