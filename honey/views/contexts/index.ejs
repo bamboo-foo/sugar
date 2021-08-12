@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+<link rel="stylesheet" href="/stylesheets/new.css" />
+
+<table>
+  <h3><%= title %></h3>
+  <thead>
+    <th>Reading</th>
+    <th>Units</th>
+    <th>Reading Type</th>
+    <th>Details</th>
+    <th>Delete Record</th>
+  </thead>
+  <tbody>
+    <% contexts.forEach( context => { %>
+    <tr class="<%= context._id %>">
+      <td><%= context.date %></td>
+      <td><%= context.stress %></td>
+      <td><%= context.sleep %></td>
+      <td><%= context.exercise %></td>
+      <td><a href="/contexts/<%= context._id %>/">Detailed View</a></td>
+      <td class="remove" id="<%= context._id %>">Remove</td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
+<script src="/javascripts/delete.js"></script>
+<%- include('../partials/footer') %>
