@@ -1,35 +1,26 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-  </head>
-  <body>
-    <header>
-      <a href="/sugars/new">Add a Reading</a>
-    </header>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <table>
-      <thead>
-        <th>Reading</th>
-        <th>Units</th>
-        <th>Reading Type</th>
-        <th>Details</th>
-        <th>Delete Record</th>
-      </thead>
-      <tbody>
-        <% sugars.forEach( sugar => { %>
-        <tr>
-          <td><%= sugar.reading %></td>
-          <td><%= sugar.units %></td>
-          <td><%= sugar.readingType %></td>
-          <td><a href="/sugars/<%= sugar._id %>/">Detailed View</a></td>
-          <td class="remove" id="<%= sugar._id %>">Remove</td>
-        </tr>
-        <% }); %>
-      </tbody>
-    </table>
-    <script src="/javascripts/delete"></script>
-  </body>
-</html>
+<%- include('../partials/header') %>
+<link rel="stylesheet" href="/stylesheets/new.css" />
+
+<table>
+  <h3><%= title %></h3>
+  <thead>
+    <th>Reading</th>
+    <th>Units</th>
+    <th>Reading Type</th>
+    <th>Details</th>
+    <th>Delete Record</th>
+  </thead>
+  <tbody>
+    <% sugars.forEach( sugar => { %>
+    <tr class="<%= sugar._id %>">
+      <td><%= sugar.reading %></td>
+      <td><%= sugar.units %></td>
+      <td><%= sugar.readingType %></td>
+      <td><a href="/sugars/<%= sugar._id %>/">Detailed View</a></td>
+      <td class="remove" id="<%= sugar._id %>">Remove</td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
+<script src="/javascripts/delete.js"></script>
+<%- include('../partials/footer') %>

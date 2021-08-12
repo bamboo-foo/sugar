@@ -58,3 +58,7 @@ a {
 a:hover {
   color: var(--acc-bckgrnd);
 }
+
+td > a {
+  color: var(--acc-drkr);
+}

@@ -42,7 +42,7 @@ async function updateSugar(mouseEvent) {
   }
 
   //TODO: [HON-36]  this could be like updating the title and giving a settimeoutbefore the redirect on the server side
-  informUser = response ? response : "error";
+  informUser = response.status === 200 ? response : "error";
   console.log(informUser);
   informUser !== "error"
     ? (window.location = "/sugars")

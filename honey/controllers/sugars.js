@@ -8,8 +8,19 @@ module.exports = {
   show,
   edit,
   update,
+  delete: deleteOne,
 };
 // else the validator should say please enter in mmol/L or offer up a conversion if reading is out of bounds
+async function deleteOne(req, res) {
+  try {
+    let response = await Sugar.findByIdAndDelete(req.params.id);
+    res.send(response);
+  } catch (error) {
+    res.status(500);
+    res.send("resource not available");
+    console.log("hi from deleteOne in sugarCtrl: ", err);
+  }
+}
 
 async function update(req, res) {
   // res.send("updated");
@@ -24,9 +35,12 @@ async function update(req, res) {
       if (err) return res.redirect("/sugars");
       console.log("Hi from update in sugarCtrl, success: ", foundRecord);
 
-      res.send("200");
+      res.status(200);
+      res.send("record updated");
     });
   } catch (err) {
+    res.status(500);
+    res.send("resource not available");
     console.log("Hi from edit in sugarCtrl: ", err);
   }
 }
