@@ -16,6 +16,7 @@
         <th>Units</th>
         <th>Reading Type</th>
         <th>Details</th>
+        <th>Delete Record</th>
       </thead>
       <tbody>
         <% sugars.forEach( sugar => { %>
@@ -24,9 +25,11 @@
           <td><%= sugar.units %></td>
           <td><%= sugar.readingType %></td>
           <td><a href="/sugars/<%= sugar._id %>/">Detailed View</a></td>
+          <td class="remove" id="<%= sugar._id %>">Remove</td>
         </tr>
         <% }); %>
       </tbody>
     </table>
+    <script src="/javascripts/delete"></script>
   </body>
 </html>
