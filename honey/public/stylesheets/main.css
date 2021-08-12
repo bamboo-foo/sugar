@@ -33,7 +33,7 @@ nav {
   /* height: 5%; */
   display: flex;
   background-color: var(--acc-drkr);
-  color: var(--bckgrnd-clr);
+  color: var(--bckgrnd-clr-lt);
   justify-content: center;
   font-family: "Fugaz One", sans-serif;
   font-size: 4.4em;
