@@ -7,7 +7,7 @@
   <h3><%= title %></h3>
   <form action="/sugars" method="POST">
     <div class="col">
-      <label for="">Blood sugar reading value</label>
+      <label for="">Blood sugar reading value:</label>
       <input type="text" name="reading" />
     </div>
     <!-- TODO: [HON-20] add a switch at top, and relates with the plus button that if pushed this label should change to were not was -->
@@ -19,7 +19,7 @@
       </select>
     </div>
     <div class="col">
-      <label for="">Reading with respect to meals</label>
+      <label for="">Reading with respect to meals:</label>
       <select name="readingType" id="">
         <option value="pre-meal">pre-meal</option>
         <option value="post-meal">post-meal</option>
@@ -32,7 +32,7 @@
       <input type="date" name="takenAtDate" id="takenAtDate" />
     </div>
     <div class="col">
-      <label for="time">Time</label>
+      <label for="time">Time:</label>
       <input type="time" name="takenAtTime" />
     </div>
     <div class="col"><button type="submit">Submit</button></div>
