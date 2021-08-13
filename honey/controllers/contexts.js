@@ -5,7 +5,23 @@ module.exports = {
   index,
   new: newContext,
   create,
+  show,
 };
+
+async function show(req, res) {
+  try {
+    let context = await Context.findById(req.params.id);
+    res.render("contexts/show", {
+      title: "Detailed Context",
+      context,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500);
+    res.redirect("/contexts");
+  }
+  res.render("contexts/show");
+}
 
 async function create(req, res) {
   try {

@@ -6,5 +6,6 @@ const contextCtrl = require("../controllers/contexts");
 router.get("/", contextCtrl.index);
 router.get("/new", contextCtrl.new);
 router.post("/", contextCtrl.create);
+router.get("/:id", contextCtrl.show);
 
 module.exports = router;
