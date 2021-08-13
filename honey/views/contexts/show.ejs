@@ -18,7 +18,9 @@
       <td><%= context.sleep %></td>
       <td><%= context.exercise %></td>
       <% context.sugars.forEach( reading => { %>
+         <% if (reading.reading) { %>
       <td><%= reading.reading %></td>
+      <% }; %> 
       <% }); %>
       <td><a href="/contexts/<%= context._id %>/edit">Edit Reading</a></td>
     </tr>
