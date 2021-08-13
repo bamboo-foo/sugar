@@ -8,7 +8,20 @@ module.exports = {
   show,
   edit,
   update,
+  delete: deleteOne,
 };
+
+async function deleteOne(req, res) {
+  try {
+    let response = await Context.findByIdAndDelete(req.params.id);
+    // res.status(200);
+    res.send(200, response);
+  } catch (error) {
+    console.log(error);
+    res.status(500);
+    res.send("Resource not available");
+  }
+}
 
 async function update(req, res) {
   try {

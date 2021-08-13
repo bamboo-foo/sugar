@@ -2,13 +2,22 @@ let table = document.querySelector("table");
 
 table.addEventListener("click", handleRemove);
 
-let idForRemoval, action, removeRecord, recordForRemoval, response, tableRow;
+let idForRemoval,
+  action,
+  removeRecord,
+  recordForRemoval,
+  response,
+  tableRow,
+  prefixPath,
+  myPath;
 
 async function handleRemove(mouseEvent) {
+  myPath = window.location.pathname;
   idForRemoval = mouseEvent.target.id;
   if (idForRemoval) {
+    prefixPath = myPath.match(/\/[a-z]*\//g)[0];
     try {
-      action = "/sugars/" + idForRemoval;
+      action = prefixPath + idForRemoval;
 
       response = await fetch(action, {
         method: "DELETE",
