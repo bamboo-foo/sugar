@@ -81,19 +81,9 @@ console.log('this is data incoming',valSugarData);
     newRecord.save(function (err) {
       if (err) return res.redirect("/sugars");
       console.log("Hi from create in sugarCtrl, success: ", newRecord);
-      // pushIt(newRecord, req, res);
+      pushIt(newRecord);
     });
-    let aContext = await Context.find({
-      date: valSugarData.takenAtDate,
-    });
-console.log(req.body._id)
-    //if (!aContext) {
-      await aContext[0].sugars.push(valSugarData._id);
-      console.log(aContext);
-
-      // console.log(typeof aContext[0].sugars, aContext[0].sugars);
-      await aContext[0].save();
-   // }
+    
 
     return res.redirect("/sugars");
   } catch (err) {
@@ -101,24 +91,37 @@ console.log(req.body._id)
   }
 }
 
-// async function pushIt(reqSugarData, req, res) {
-//   try {
-//     let aContext = await Context.find({
-//       date: reqSugarData.takenAtDate,
-//     });
-//     console.log(aContext);
-//     console.log(reqSugarData);
-//     await aContext[0].sugars.push(reqSugarData._id);
-//     console.log(aContext);
 
-//     // console.log(typeof aContext[0].sugars, aContext[0].sugars);
-//     await aContext[0].save();
+// let aContext = await Context.find({
+//   date: valSugarData.takenAtDate,
+// });
+// console.log(valSugarData._id)
+// //if (!aContext) {
+//   await aContext[0].sugars.push(valSugarData._id);
+//   console.log(aContext);
 
-//     return res.redirect("/sugars");
-//   } catch (error) {
-//     console.log("oh no", error);
-//   }
-// }
+//   // console.log(typeof aContext[0].sugars, aContext[0].sugars);
+//   await aContext[0].save();
+// /
+
+async function pushIt(reqSugarData) {
+  try {
+    let aContext = await Context.find({
+      date: reqSugarData.takenAtDate,
+    });
+    console.log(aContext);
+    console.log(reqSugarData);
+    await aContext[0].sugars.push(reqSugarData._id);
+    console.log(aContext);
+
+    // console.log(typeof aContext[0].sugars, aContext[0].sugars);
+    await aContext[0].save();
+
+    return;
+  } catch (error) {
+    console.log("oh no", error);
+  }
+}
 
 function newSugar(req, res) {
   res.render("sugars/new", {
