@@ -9,30 +9,31 @@
         <label for="">When was the reading taken?</label>
         <!-- TODO: [HON-21] can we have a button for now? to auto set the datetime to now? -->
         <!-- TODO: [HON-43]  date here on edit contexts isn't being pulled in and same error probably in for the edit in sugars but that may be masked by pulling in todays date -->
-        <input type="date" name="date" id="takenAtDate" value="<%=context.date %>"/>
+        <input type="date" name="date" id="date" value="<%=context.date %>"/>
       </div>
       <div class="col">
         <label for="">Stress Level During the Day:</label>
-        <input type="number" name="stress" value="<%=context.stress %>"/>
+        <input type="number" name="stress" value="<%=context.stress %>" id="stress"/>
       </div>
       <div class="col">
         <label for="">How was Quality of Sleep Last Night?</label>
-        <input type="number" name="sleep" value="<%=context.sleep %>"/>
+        <input type="number" name="sleep" value="<%=context.sleep %>" id="sleep"/>
       </div>
       <!-- TODO: [HON-20] add a switch at top, and relates with the plus button that if pushed this label should change to were not was -->
       <div class="col">
         <label for="">Will You Have Excercised Today?</label>
-        <select name="exercise" id="">
+        <select name="exercise" id="exercise">
             //TODO: [HON-42] selection options again here too
           <option value="true">yes</option>
           <option value="false">no</option>
         </select>
       </div>
       <div class="col">
-      <div></div>
-      <button type="submit" class="submit" id="submit">Submit</button>
-    </div>
+        <div></div>
+        <div class="submit" id="submit">Submit</div>
+      </div>
   </form>
 </main>
 <!-- <script src="/javascripts/today-date.js"></script> -->
+<script src="/javascripts/submit.js"></script>
 <%- include('../partials/footer') %>

@@ -7,6 +7,7 @@ router.get("/", contextCtrl.index);
 router.get("/new", contextCtrl.new);
 router.post("/", contextCtrl.create);
 router.get("/:id/edit", contextCtrl.edit);
+router.patch("/:id/edit", contextCtrl.update);
 router.get("/:id", contextCtrl.show);
 
 module.exports = router;

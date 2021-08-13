@@ -1,34 +1,52 @@
 // cache elements
 const submitBtn = document.getElementById("submit");
 
-// state vars
-let reading, units, readingType, takenAtDate, takenAtTime, response;
+// state vars for
+let reading, units, readingType, takenAtDate, takenAtTime, response, payload;
+
+let date, stress, sleep, exercise;
 
 // path for id
 const myPath = window.location.pathname;
 
-submitBtn.addEventListener("click", updateSugar);
+submitBtn.addEventListener("click", updateRecord);
 
-const recordId = myPath.slice(8, 32),
-  formAction = "/sugars/" + recordId + "/edit";
+const prefixPath = myPath.match(/\/[a-z]*\//g)[0],
+  recordId = myPath.slice(prefixPath.length, prefixPath.length + 24),
+  formAction = prefixPath + recordId + "/edit";
 
-async function updateSugar(mouseEvent) {
+async function updateRecord(mouseEvent) {
   //ensures correct state for vars after click
-  reading = document.getElementById("reading").value;
+  if (prefixPath === "/sugars/") {
+    reading = document.getElementById("reading").value;
 
-  units = document.getElementById("units").value;
-  readingType = document.getElementById("readingType").value;
-  takenAtDate = document.getElementById("takenAtDate").value;
-  takenAtTime = document.getElementById("takenAtTime").value;
+    units = document.getElementById("units").value;
+    readingType = document.getElementById("readingType").value;
+    takenAtDate = document.getElementById("takenAtDate").value;
+    takenAtTime = document.getElementById("takenAtTime").value;
 
-  const payload = {
-    _id: recordId,
-    reading,
-    units,
-    readingType,
-    takenAtDate,
-    takenAtTime,
-  };
+    payload = {
+      _id: recordId,
+      reading,
+      units,
+      readingType,
+      takenAtDate,
+      takenAtTime,
+    };
+  } else if (prefixPath === "/contexts/") {
+    date = document.getElementById("date").value;
+    stress = document.getElementById("stress").value;
+    sleep = document.getElementById("sleep").value;
+    exercise = document.getElementById("exercise").value;
+
+    payload = {
+      _id: recordId,
+      date,
+      stress,
+      sleep,
+      exercise,
+    };
+  }
 
   try {
     response = await fetch(formAction, {
@@ -45,6 +63,6 @@ async function updateSugar(mouseEvent) {
   informUser = response.status === 200 ? response : "error";
   console.log(informUser);
   informUser !== "error"
-    ? (window.location = "/sugars")
+    ? (window.location = prefixPath + recordId)
     : console.log("please try again");
 }

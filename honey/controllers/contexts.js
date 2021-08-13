@@ -7,7 +7,29 @@ module.exports = {
   create,
   show,
   edit,
+  update,
 };
+
+async function update(req, res) {
+  try {
+    let foundRecord = await Context.findById(req.params.id);
+
+    for (let key in req.body) {
+      foundRecord[key] = req.body[key];
+    }
+    foundRecord.save(function (err) {
+      if (err) return res.redirect("/contexts");
+      console.log("Hi from update in contextCtrl, success: ", foundRecord);
+
+      res.status(200);
+      res.send("record updated");
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500);
+    res.send("Resource not available");
+  }
+}
 
 async function edit(req, res) {
   try {
