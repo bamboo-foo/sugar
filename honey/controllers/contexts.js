@@ -6,7 +6,23 @@ module.exports = {
   new: newContext,
   create,
   show,
+  edit,
 };
+
+async function edit(req, res) {
+  try {
+    let context = await Context.findById(req.params.id);
+    console.log("hello dear from edit in contextCtrl: ", context);
+    res.render("contexts/edit", {
+      title: "Edit Context",
+      context,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500);
+    res.redirect("/contexts");
+  }
+}
 
 async function show(req, res) {
   try {
