@@ -1,14 +1,33 @@
-! If testing, always use npm start in the root folder(built for cross platform devving).  Nodemon may work initially but problems can occur if changes are made
 
-☐ App Title: Contains a description of what the app does and optional background info.
+
+
+
+#Sugar:
+
+A way to gain ownership over the health experience.  Primarily a sugar tracking log with a holistic approach 
+
 
 ☐ Screenshot(s): A screenshot of your app's landing page and any other screenshots of interest.
 
-☐ Technologies Used: List of the technologies used.
+#Tech
+
+MEN full stack
 
 nodejs version 12.16.1
+Express
+MongoDB
+
+
+html
+css
+js
+
 
 ☐ Getting Started: Include a link to the deployed app and your Trello board with the project's planning.
+
+http://localhost:3000
+
+JIRA
 
 ☐ Next Steps: Planned future enhancements (icebox items).
 
