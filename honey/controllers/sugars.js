@@ -1,4 +1,5 @@
 const Sugar = require("../models/sugar"),
+  Context = require("../models/context"),
   mongoose = require("mongoose");
 
 module.exports = {
@@ -76,15 +77,47 @@ async function create(req, res) {
 
   try {
     const newRecord = await new Sugar(valSugarData);
+
     newRecord.save(function (err) {
       if (err) return res.redirect("/sugars");
       console.log("Hi from create in sugarCtrl, success: ", newRecord);
-      return res.redirect("/sugars");
+      // pushIt(newRecord, req, res);
     });
+    let aContext = await Context.find({
+      date: valSugarData.takenAtDate,
+    });
+    console.log(aContext);
+    console.log(valSugarData);
+    await aContext[0].sugars.push(valSugarData._id);
+    console.log(aContext);
+
+    // console.log(typeof aContext[0].sugars, aContext[0].sugars);
+    await aContext[0].save();
+
+    return res.redirect("/sugars");
   } catch (err) {
     console.log("Hi from create in sugarCtrl, there was an error: ", err);
   }
 }
+
+// async function pushIt(reqSugarData, req, res) {
+//   try {
+//     let aContext = await Context.find({
+//       date: reqSugarData.takenAtDate,
+//     });
+//     console.log(aContext);
+//     console.log(reqSugarData);
+//     await aContext[0].sugars.push(reqSugarData._id);
+//     console.log(aContext);
+
+//     // console.log(typeof aContext[0].sugars, aContext[0].sugars);
+//     await aContext[0].save();
+
+//     return res.redirect("/sugars");
+//   } catch (error) {
+//     console.log("oh no", error);
+//   }
+// }
 
 function newSugar(req, res) {
   res.render("sugars/new", {

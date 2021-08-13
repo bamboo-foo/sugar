@@ -2,16 +2,24 @@
 <table>
   <thead>
     <th>ID</th>
+    <th>Date</th>
+    <th>Stress</th>
+    <th>Sleep</th>
+    <th>Exercise</th>
+    <% context.sugars.forEach( reading => { %>
     <th>Reading</th>
-    <th>Units</th>
-    <th>Reading Type</th>
+    <% }); %>
   </thead>
   <tbody>
     <tr>
       <td><%= context._id %></td>
-      <td><%= context.reading %></td>
-      <td><%= context.units %></td>
-      <td><%= context.readingType %></td>
+      <td><%= context.date %></td>
+      <td><%= context.stress %></td>
+      <td><%= context.sleep %></td>
+      <td><%= context.exercise %></td>
+      <% context.sugars.forEach( reading => { %>
+      <td><%= reading.reading %></td>
+      <% }); %>
       <td><a href="/contexts/<%= context._id %>/edit">Edit Reading</a></td>
     </tr>
   </tbody>

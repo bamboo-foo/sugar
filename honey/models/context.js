@@ -21,6 +21,12 @@ const contextSchema = new Schema({
   exercise: {
     type: Boolean,
   },
+  sugars: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Sugar",
+    },
+  ],
 });
 
 module.exports = mongoose.model("Context", contextSchema);
