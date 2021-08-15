@@ -1,4 +1,5 @@
 const Context = require("../models/context"),
+  Sugar = require("../models/sugar"),
   mongoose = require("mongoose");
 
 module.exports = {
@@ -61,17 +62,23 @@ async function edit(req, res) {
 
 async function show(req, res) {
   try {
-    let context = await Context.findById(req.params.id);
-    res.render("contexts/show", {
+    let reqContext = await Context.findById(req.params.id);
+    let context = await Context.findById(req.params.id)
+      .populate({
+        path: "sugars",
+        select: "reading",
+      })
+      .exec();
+    console.log("Hi hoping: ", context, reqContext.date);
+    return res.render("contexts/show", {
       title: "Detailed Context",
       context,
     });
   } catch (error) {
     console.log(error);
     res.status(500);
-    res.redirect("/contexts");
+    return res.redirect("/contexts");
   }
-  res.render("contexts/show");
 }
 
 async function create(req, res) {
