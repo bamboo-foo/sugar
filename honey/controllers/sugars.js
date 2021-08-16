@@ -74,7 +74,7 @@ async function show(req, res) {
 
 async function create(req, res) {
   let valSugarData = validateSugarData(req.body);
-console.log('this is data incoming',valSugarData);
+  console.log("this is data incoming", valSugarData);
   try {
     const newRecord = await new Sugar(valSugarData);
 
@@ -83,14 +83,12 @@ console.log('this is data incoming',valSugarData);
       console.log("Hi from create in sugarCtrl, success: ", newRecord);
       pushIt(newRecord);
     });
-    
 
     return res.redirect("/sugars");
   } catch (err) {
     console.log("Hi from create in sugarCtrl, there was an error: ", err);
   }
 }
-
 
 // let aContext = await Context.find({
 //   date: valSugarData.takenAtDate,
