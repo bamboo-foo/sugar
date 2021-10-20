@@ -2,37 +2,38 @@
 
 
 
-#Sugar:
+# Sugar:
 
-A way to gain ownership over the health experience.  Primarily a sugar tracking log with a holistic approach 
+A way to gain ownership over the health experience.  Primarily a sugar tracking log with a holistic, educative approach. Empowered with data and personalized tips a user can talk confidently with their doctor and discuss tips received to take charge over their health experience.
 
 
-☐ Screenshot(s): A screenshot of your app's landing page and any other screenshots of interest.
+# Screenshot:
 
-#Tech
+![Sugar Screenshot](/path/to/image.jpg)
+
+# Tech
 
 MEN full stack
 
-nodejs version 12.16.1
+nodejs 
 Express
 MongoDB
 
 
-html
-css
-js
+HTML
+CSS
+JS
 
 
-☐ Getting Started: Include a link to the deployed app and your Trello board with the project's planning.
+# Demo: 
 
-http://localhost:3000
+(Sugar)[https://sei42-project1-sugar.herokuapp.com]
 
-JIRA
+# Next Steps: 
 
-☐ Next Steps: Planned future enhancements (icebox items).
-
-☐ Difficulties:
-
-Jira helped to stave paralysis. At points I would get stuck just thinking about two tasks. The fact that I had to create DRY ejs and an index somehow got me not knowing where to start.
-
-Then I found the answer: Jira!! Just logging that into Jira freed me to slowly trickle it in my board.
+1. Graphs to communicate trends
+2. Tips gleamed by analysis
+3. Animations 
+4. Food journal
+5. Food AI API for image classification in food journal
+6. Personalized trigger foods
