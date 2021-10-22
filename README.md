@@ -9,7 +9,7 @@ A way to gain ownership over the health experience.  Primarily a sugar tracking 
 
 # Screenshot:
 
-![Sugar Screenshot](/path/to/image.jpg)
+![Sugar Screenshot](/imgs/sugar-screenshot.jpg)
 
 # Tech
 
