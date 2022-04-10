@@ -1,9 +1,12 @@
 * {
   --text-md: 1.2em;
   --bckgrnd-clr: rgb(228, 228, 228);
+  --bckgrnd-clr-dk: rgb(206, 206, 206);
   --bckgrnd-clr-lt: rgb(236, 236, 236);
   --acc-drk: rgb(26, 26, 26);
   --acc-drkr: rgb(15, 15, 15);
+  --acc-gray: rgb(114, 114, 114);
+  --acc-gray-lt: rgb(204, 204, 204);
   --acc-bckgrnd: rgb(66, 149, 231);
   --corners-md: 1em;
   --corners-sm: 0.5em;
@@ -70,6 +73,52 @@ header .container {
   border-bottom: 1px solid var(--acc-bckgrnd);
   box-shadow: 0 7px 5px grey;
   background-color: var(--acc-drkr);
+}
+
+.table-container {
+  width: 92%;
+  border-radius: var(--corners-md);
+  overflow: hidden;
+  background-color: var(--bckgrnd-clr-dk);
+  padding: 15px 0;
+}
+
+.table-wrapper {
+  /* border-radius: var(--corners-md); */
+  overflow: auto;
+}
+
+.table-inset {
+  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  border-bottom: 1px solid var(--acc-gray);
+  padding: 16px;
+  padding-bottom: 3px;
+  padding-top: 0;
+  text-align: left;
+  font-family: "Anek Odia", sans-serif;
+  font-weight: bold;
+}
+
+tbody {
+  background-color: var(--bckgrnd-clr-lt);
+}
+
+td {
+  border-bottom: 1px solid var(--acc-gray-lt);
+  padding: 16px;
+  text-align: left;
+  font-family: "Anek Odia", sans-serif;
 }
 
 @media screen and (min-width: 1148px) {
