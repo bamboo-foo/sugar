@@ -71,3 +71,9 @@ header .container {
   box-shadow: 0 7px 5px grey;
   background-color: var(--acc-drkr);
 }
+
+@media screen and (min-width: 1148px) {
+  main {
+    max-width: 50%;
+  }
+}
