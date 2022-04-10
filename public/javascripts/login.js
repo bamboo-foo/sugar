@@ -1,6 +1,7 @@
 const subBtn = document.getElementById("submit"),
   loginChoice = document.getElementById("login"),
-  passField = document.getElementById("password-field");
+  userField = document.getElementById("username-field");
+passField = document.getElementById("password-field");
 
 let loginType;
 
@@ -11,7 +12,9 @@ function handleClick(mouseEvent) {
 
   if (loginType === "Login with Username") {
     passField.style.display = "flex";
+    userField.style.display = "flex";
   } else if (loginType === "Login with Google") {
     passField.style.display = "none";
+    userField.style.display = "none";
   }
 }
