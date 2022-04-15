@@ -108,17 +108,31 @@ function newContext(req, res) {
 async function index(req, res) {
   try {
     let contexts = await Context.find({});
+
+    contexts = cleanDate(contexts);
+
     res.render("contexts/index", {
       title: "Context Informs Readings",
       contexts,
     });
   } catch (error) {
+    // shouldn't this be 400 bad request?
     res.status(500);
     res.send("resource unavailable");
+    console.log("err: in index", error);
   }
 }
 
 function validateContextService(reqInput) {
   // watch the true false as a string coming in
   return;
+}
+
+function cleanDate(contexts) {
+  return contexts.map((context) => {
+    return {
+      ...context._doc,
+      date: context.date.toDateString().slice(4),
+    };
+  });
 }

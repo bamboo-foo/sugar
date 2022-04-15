@@ -19,7 +19,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 app.use(logger("dev"));
-app.use(express.json());
+app.use(express.json()); // why are there both body-parser and express.json and how did this not throw an error if the req body was already parsed?
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
