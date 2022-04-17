@@ -3,7 +3,7 @@
 
 <main>
   <h3><%= title %></h3>
-  <form action="" method="GET">
+  <form action="/api/users/login" method="POST">
     <section class="login-form">
       <div class="col">
         <label for="">Login</label>
@@ -18,13 +18,13 @@
       </div>
       <div class="col" id="password-field" style="display: none">
         <label for="time">Password:</label>
-        <input type="text" name="password" />
+        <input type="password" name="password" />
       </div>
     </section>
     <!--this is only for responsive desktop view <div class="col"><button>+</button></div> -->
     <div class="col" id="newSub">
       <button class="submit">New User</button>
-      <button type="submit" class="submit" id="submit">Submit</button>
+      <button type="submit" class="submit" id="submit">Login</button>
     </div>
   </form>
 </main>
