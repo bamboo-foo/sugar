@@ -130,6 +130,7 @@ function newSugar(req, res) {
 async function index(req, res) {
   try {
     let sugars = await Sugar.find({});
+    console.log("010", req.cookies.token);
     res.render("sugars/index", {
       title: "Sugar Records Analysis",
       sugars,

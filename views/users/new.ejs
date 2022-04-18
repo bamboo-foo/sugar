@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+<link rel="stylesheet" href="/stylesheets/new.css" />
+
+<main>
+  <h3><%= title %></h3>
+  <form action="/api/users/signup" method="POST">
+    <section class="login-form">
+      <div class="col" id="name-field">
+        <label for="name">Name:</label>
+        <input type="text" name="name" />
+      </div>
+
+      <div class="col" id="username-field">
+        <label for="email">Email:</label>
+        <input type="email" name="email" />
+      </div>
+      <div class="col" id="password-field">
+        <label for="password">Password:</label>
+        <input type="password" name="password" />
+      </div>
+    </section>
+    <!--this is only for responsive desktop view <div class="col"><button>+</button></div> -->
+    <div class="col" id="newSub">
+      <button class="submit"><a href="/">Signup</a></button>
+      <button type="submit" class="submit" id="submit">Login</button>
+    </div>
+  </form>
+</main>
+<script src="/javascripts/login.js"></script>
+<%- include('../partials/footer') %>
