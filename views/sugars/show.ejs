@@ -1,19 +1,36 @@
 <%- include('../partials/header') %>
-<table>
-  <thead>
-    <th>ID</th>
-    <th>Reading</th>
-    <th>Units</th>
-    <th>Reading Type</th>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= sugar._id %></td>
-      <td><%= sugar.reading %></td>
-      <td><%= sugar.units %></td>
-      <td><%= sugar.readingType %></td>
-      <td><a href="/sugars/<%= sugar._id %>/edit">Edit Reading</a></td>
-    </tr>
-  </tbody>
-</table>
+<link rel="stylesheet" href="/stylesheets/new.css" />
+
+<main>
+  <h3><%= title %></h3>
+
+  <div class="table-container">
+    <div class="table-wrapper">
+      <div class="table-inset">
+        <table>
+          <thead>
+            <th>ID</th>
+            <th>Reading</th>
+            <th>Units</th>
+            <th>Reading Type</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Edit</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="long0id"><%= sugar._id %></td>
+              <td><%= sugar.reading %></td>
+              <td><%= sugar.units %></td>
+              <td><%= sugar.readingType %></td>
+              <td><%= sugar.takenAtDate %></td>
+              <td><%= sugar.takenAtTime %></td>
+              <td><a href="/sugars/<%= sugar._id %>/edit">Edit Reading</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
 <%- include('../partials/footer') %>
