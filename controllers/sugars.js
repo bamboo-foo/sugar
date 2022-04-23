@@ -2,6 +2,8 @@ const Sugar = require("../models/sugar"),
   Context = require("../models/context"),
   mongoose = require("mongoose");
 
+const atob = require("atob");
+
 module.exports = {
   index,
   new: newSugar,
@@ -130,7 +132,10 @@ function newSugar(req, res) {
 async function index(req, res) {
   try {
     let sugars = await Sugar.find({});
+    // TODO: we are going to move and install middleware isLoggedIn so don't do this here anymore. Here just access the req.user
     console.log("010", req.cookies.token);
+    console.log("030", atob(req.cookies.token.split(".")[1]));
+
     res.render("sugars/index", {
       title: "Sugar Records Analysis",
       sugars,

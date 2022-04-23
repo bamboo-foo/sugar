@@ -2,7 +2,7 @@ const User = require("../models/user");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const res = require("express/lib/response");
-const { options } = require("../routes/api/users");
+// const { options } = require("../routes/api/users");
 const bcrypt = require("bcrypt");
 
 const SALT_ROUNDS = 6;
