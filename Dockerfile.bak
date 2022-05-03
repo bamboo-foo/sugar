@@ -1,0 +1,17 @@
+FROM node:16-alpine
+
+RUN apk add dumb-init
+
+COPY ./ /home/node/app
+
+COPY --chown=node:node . .
+
+WORKDIR /home/node/app
+
+RUN npm install --save bcryptjs jsonwebtoken cookie-parser dotenv ejs express mongoose http-errors morgan
+
+RUN npm install --global nodemon
+
+USER node
+
+CMD ["dumb-init", "nodemon", "./bin/www"]

@@ -2,7 +2,7 @@ const Sugar = require("../models/sugar"),
   Context = require("../models/context"),
   mongoose = require("mongoose");
 
-const atob = require("atob");
+// const atob = require("atob");
 
 module.exports = {
   index,
@@ -76,9 +76,17 @@ async function show(req, res) {
 
 async function create(req, res) {
   let valSugarData = validateSugarData(req.body);
-  console.log("this is data incoming", valSugarData);
+  console.log("this is data incoming", {...valSugarData});
+
+
   try {
-    const newRecord = await new Sugar(valSugarData);
+    const newRecord = await new Sugar({
+      ...valSugarData,
+      person: req.user._id
+    });
+
+    // console.log(req.user)
+    // newRecord.person = req.user._id;
 
     newRecord.save(function (err) {
       if (err) return res.redirect("/sugars");
@@ -110,7 +118,9 @@ async function pushIt(reqSugarData) {
       date: reqSugarData.takenAtDate,
     });
     console.log(aContext);
-    console.log(reqSugarData);
+    console.log('118', reqSugarData);
+    // TODO: on post request will cookie come up? Also think protect the form route. If you protect the form route, you could send back user Id in form
+    // but seriously yes, what about if someone has a user id so this create POST route needs to be protected no matter what.
     await aContext[0].sugars.push(reqSugarData._id);
     console.log(aContext);
 
@@ -131,11 +141,11 @@ function newSugar(req, res) {
 
 async function index(req, res) {
   try {
-    let sugars = await Sugar.find({});
+    
+    
+    let sugars = await Sugar.find({ person: req.user._id});
     // TODO: we are going to move and install middleware isLoggedIn so don't do this here anymore. Here just access the req.user
-    console.log("010", req.cookies.token);
-    console.log("030", atob(req.cookies.token.split(".")[1]));
-
+  
     res.render("sugars/index", {
       title: "Sugar Records Analysis",
       sugars,
@@ -155,6 +165,7 @@ function validateSugarData(inputData) {
       ? todaysDate()
       : dataToBeValidated.takenAtDate;
 
+      // TODO: Why is this being done would not model schema validate this part? Was this for seeing which units?
   dataToBeValidated.reading = parseFloat(inputData.reading);
   if (dataToBeValidated.reading > 25) {
     // TODO: [HON-18] this needs to be fixed, min max needs to be added

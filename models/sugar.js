@@ -28,6 +28,10 @@ const sugarSchema = new Schema(
       // army time
       type: String,
     },
+    person: {
+      type: Schema.Types.ObjectId,
+      ref: "user",
+    },
   },
   {
     timestamps: true,

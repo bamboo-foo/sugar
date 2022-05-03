@@ -16,6 +16,12 @@ const userSchema = new Schema(
       minLength: 3,
     },
     googleId: String,
+    sugarReadings: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "sugar",
+      },
+    ],
   },
   {
     toJSON: {

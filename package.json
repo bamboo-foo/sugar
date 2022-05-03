@@ -1,22 +1,14 @@
 {
-  "name": "honey",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
   "dependencies": {
-    "atob": "^2.1.2",
     "bcrypt": "^5.0.1",
-    "body-parser": "^1.19.0",
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "dotenv": "^10.0.0",
-    "ejs": "~2.6.1",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.7",
+    "express": "^4.17.3",
+    "http-errors": "^2.0.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.13.5",
-    "morgan": "~1.9.1"
+    "mongoose": "^6.3.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.16"
   }
 }

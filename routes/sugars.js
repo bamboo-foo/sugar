@@ -3,10 +3,11 @@ const express = require("express"),
   router = express.Router();
 
 const sugarsCtrl = require("../controllers/sugars");
+const isLoggedIn = require("../helpers/isLoggedIn");
 
-router.get("/", sugarsCtrl.index);
+router.get("/", isLoggedIn, sugarsCtrl.index);
 router.get("/new", sugarsCtrl.new);
-router.post("/", sugarsCtrl.create);
+router.post("/", isLoggedIn, sugarsCtrl.create);
 router.get("/:id/edit", sugarsCtrl.edit);
 router.patch("/:id/edit", sugarsCtrl.update);
 router.delete("/:id", sugarsCtrl.delete);
