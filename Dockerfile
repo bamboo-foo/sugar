@@ -14,4 +14,4 @@ EXPOSE 3000
 
 USER node
 
-CMD ["dumb-init", "node", "server.js"]
+CMD ["dumb-init", "node", "bin/www"]
