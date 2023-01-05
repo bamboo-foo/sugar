@@ -4,23 +4,24 @@ A way to gain ownership over the health experience. Primarily a sugar tracking l
 
 # Screenshot:
 
-![Sugar Screenshot](/path/to/image.jpg)
+![Sugar Screenshot](imgs/sugar-screenshot.jpg)
 
 # Tech
 
 MEN full stack
 
-nodejs
-Express
-MongoDB
+- nodejs
+- Express.js
+- MongoDB
+- JWT
 
-HTML
-CSS
-JS
+- HTML
+- CSS
+- JS
 
 # Demo:
 
-(Sugar)[https://sei42-project1-sugar.herokuapp.com]
+[Sugar demo on fly.io]([https://www.google.com](https://sugar.fly.dev/))
 
 # Next Steps:
 
