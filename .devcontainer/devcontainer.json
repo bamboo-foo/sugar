@@ -1,9 +1,13 @@
 {
-    "name": "Node.js",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
-    "forwardPorts": [3000],
-    "postCreateCommand": "yarn install",
-    "remoteUser": "node"
+  "name": "Node.js",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "forwardPorts": [3000],
+  "extensions": ["esbenp.prettier-vscode"],
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ],
+  "postCreateCommand": "yarn install && yarn nodemon bin/www",
+  "remoteUser": "node"
 }
