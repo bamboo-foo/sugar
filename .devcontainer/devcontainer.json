@@ -4,7 +4,7 @@
     "dockerfile": "Dockerfile"
   },
   "forwardPorts": [3000],
-  "extensions": ["esbenp.prettier-vscode"],
+  "extensions": ["esbenp.prettier-vscode", "mhutchie.git-graph"],
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
   ],
