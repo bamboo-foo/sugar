@@ -111,7 +111,7 @@ select {
   border: 3px solid var(--bckgrnd-clr);
 }
 
-#newSub {
+.newSub {
   flex-direction: row;
   justify-content: space-around;
 }
@@ -119,6 +119,10 @@ select {
 .long0id {
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.col.newSub a {
+  color: black;
 }
 
 /* for responsive just limit the max width to like 85% */
@@ -131,7 +135,7 @@ select {
   }
 
   .col {
-    justify-content: space-between;
+    /* justify-content: space-between; */
   }
 }
 

@@ -16,16 +16,19 @@
       </div>
       <div class="col" id="username-field">
         <label for="email">Email:</label>
-        <input type="email" name="email" />
+        <input type="email" name="email" value="demo@demo.com" />
       </div>
       <div class="col" id="password-field">
         <label for="time">Password:</label>
-        <input type="password" name="password" />
+        <input type="password" name="password" value="demo" />
       </div>
     </section>
     <!--this is only for responsive desktop view <div class="col"><button>+</button></div> -->
-    <div class="col" id="newSub">
-      <a href="/api/users/new">Signup</a>
+    <div class="col newSub">
+      <!-- <a href="/api/users/new">Signup</a> -->
+      <a href="/api/users/new">
+        <button type="button" class="submit">Signup</button>
+      </a>
       <button type="submit" class="submit" id="submit">Login</button>
     </div>
   </form>
