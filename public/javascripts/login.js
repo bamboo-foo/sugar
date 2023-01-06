@@ -1,7 +1,7 @@
 const subBtn = document.getElementById("submit"),
   loginChoice = document.getElementById("login"),
-  userField = document.getElementById("username-field");
-passField = document.getElementById("password-field");
+  userField = document.getElementById("username-field"),
+  passField = document.getElementById("password-field");
 
 let loginType;
 
